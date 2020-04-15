@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">{{ $entry->title }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,14 +14,12 @@
                         </div>
                     @endif
 
-                    <p>Mis entradas</p>
-                    <ul>
-                        @foreach ($entries as $entry)
-                        <li>
-                            <a href="{{ url('entradas/'.$entry->id) }}">{{ $entry->title }}</a>
-                        </li>
-                        @endforeach
-                    </ul>
+                    {{ $entry->content }}
+                    @if ($entry->user_id === auth()->id())
+                    <hr>
+
+                    <a href="{{ url('/entradas/'.$entry->id.'/editar') }}" class="btn btn-primary">Editar entrada</a>
+                    @endif
                 </div>
             </div>
         </div>
