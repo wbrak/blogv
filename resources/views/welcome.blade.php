@@ -17,7 +17,7 @@
 
                 <div class="card-footer">
                     Autor: 
-                    <a href="{{ url('usuarios/'.$entry->user_id) }}">
+                    <a href="{{ url('@'.$entry->user->username) }}">
                         {{ $entry->user->name }}
                     </a>
                 </div>

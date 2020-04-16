@@ -17,4 +17,4 @@ Route::get('/entradas/{entryBySlug}', 'GuestController@show');
 Route::get('/entradas/{entry}/editar', 'EntryController@edit');
 Route::put('/entradas/{entry}', 'EntryController@update');
 
-Route::get('/usuarios/{user}', 'UserController@show');
+Route::get('/@{user}', 'UserController@show');

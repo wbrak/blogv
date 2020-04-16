@@ -14,14 +14,18 @@
                         </div>
                     @endif
 
-                    <p>Mis entradas</p>
-                    <ul>
-                        @foreach ($entries as $entry)
-                        <li>
-                            <a href="{{ $entry->getUrl() }}">{{ $entry->title }}</a>
-                        </li>
-                        @endforeach
-                    </ul>
+                    @if($entries->isEmpty())
+                        <p>Nos has publicado ninguna entrada aun.</p>
+                    @else
+                        <p>Mis entradas</p>
+                        <ul>
+                            @foreach ($entries as $entry)
+                            <li>
+                                <a href="{{ $entry->getUrl() }}">{{ $entry->title }}</a>
+                            </li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </div>
             </div>
         </div>

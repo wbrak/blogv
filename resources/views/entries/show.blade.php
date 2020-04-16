@@ -22,6 +22,14 @@
                     <a href="{{ url('/entradas/'.$entry->id.'/editar') }}" class="btn btn-primary">Editar entrada</a>
                     @endcan
                 </div>
+
+                <div class="card-footer">
+                    Autor: 
+                    <a href="{{ url('@'.$entry->user->username) }}">
+                        {{ $entry->user->name }}
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
