@@ -6,7 +6,7 @@ Route::get('/', 'GuestController@index');
 
 Auth::routes();
 
-Route::get('inicio', 'HomeController@index')->name('inicio');
+Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('/entradas/crear', 'EntryController@create');
 Route::post('/entradas', 'EntryController@store');
